@@ -1,0 +1,23 @@
+<header >
+    <h1>minhas listas</h1>
+    <%= link_to "+", new_list_path, class: "button-list" %>
+</header>
+
+<div id="lists">
+    <% @lists.each do |list| %>
+        <div class="list">
+            <h3><%= list.title %></h3>
+            <%# mostrar os itens de uma lista %>
+            <div id="items">
+                <% list.items.each do |item| %>
+                    <div class="item">
+                        <input type="checkbox" id="item_<%= item.id %>" />
+                        <label for="checkbox"><%= item.description %></label>
+                    </div>
+                <% end %>
+            </div>
+            <%= link_to "+ New", new_list_item_path(list.id), class: "button-item"%>
+        </div>
+    <% end %>
+</div>
+

@@ -13,7 +13,24 @@
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
-  padding: 10px;
+  padding: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+h3 {
+  color: rgb(191, 113, 255);
 }
 
 input {
@@ -24,21 +41,47 @@ input {
   margin-bottom: 20px;
 }
 
+#lists {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 .item {
   display: flex;
   flex-direction: row;
 }
 
-.custom-button {
+/* .list {
+  padding: 5px;
+  border: 1px solid rgb(88, 88, 88);
+  border-radius: 5px;
+} */
+
+.button-list {
   background-color: rgb(191, 113, 255);
   color: white;
-  padding: 10px 20px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.button-list:hover {
+  background-color: rgb(168, 62, 255);
+}
+
+.button-item {
+  color: rgb(88, 88, 88);
+  padding: 5px 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
 }
 
-.custom-button:hover {
-  background-color: rgb(168, 62, 255);
+.button-item:hover {
+  background-color: rgb(233, 233, 233);
 }

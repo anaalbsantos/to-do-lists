@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_list
   before_action :set_item, only: %i[ show ]
 
   def index
@@ -9,13 +10,13 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    @item = @list.items.new
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = @list.items.new(item_params)
     if @item.save
-      redirect_to @item
+      redirect_to "#"
     else
       render :new, status: :unprocessable_entity
     end
@@ -38,11 +39,15 @@ class ItemsController < ApplicationController
   # end
 
   private
+    def set_list
+      @list = List.find(params[:list_id])
+    end
+
     def set_item
       @item = Item.find(params[:id])
     end
 
     def item_params
-      params.expect(item: [ :description])  
+      params.expect(item: [:description])  
     end
 end
