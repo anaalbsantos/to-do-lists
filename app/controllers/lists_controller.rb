@@ -43,6 +43,6 @@ class ListsController < ApplicationController
     end
 
     def list_params
-      params.expect(list: [:title])  
+      params.expect(list: [ :title ])
     end
 end
