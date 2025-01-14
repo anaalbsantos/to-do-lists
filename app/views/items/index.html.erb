@@ -1,0 +1,14 @@
+<h1>Itens</h1>
+
+<div id="items">
+    <% @items.each do |item| %>
+        <div class="item">
+            <input type="checkbox" id="item_<%= item.id %>" />
+            <label for="checkbox"><%= item.description %></label>
+        </div>
+    <% end %>
+</div>
+
+<div> 
+    <%= link_to "New item", new_item_path, class: "custom-button" %>
+</div>
