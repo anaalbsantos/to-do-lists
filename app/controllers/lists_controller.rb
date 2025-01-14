@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: %i[ show ]
+  before_action :set_list, only: %i[ show edit update destroy ]
 
   def index
     @lists = List.all
@@ -21,21 +21,21 @@ class ListsController < ApplicationController
     end
   end
 
-  # def edit
-  # end
+  def edit
+  end
 
-  # def update
-  #   if @list.update(list_params)
-  #     redirect_to @list
-  #   else
-  #     render :edit, status: :unprocessable_entity
-  #   end
-  # end
+  def update
+    if @list.update(list_params)
+      redirect_to lists_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
 
-  # def destroy
-  #   @list.destroy
-  #   redirect_to lists_path
-  # end
+  def destroy
+    @list.destroy
+    redirect_to lists_path
+  end
 
   private
     def set_list

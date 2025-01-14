@@ -1,0 +1,13 @@
+<%= form_with model: [list, item] do |form| %>
+<div class="form">
+    <div>
+        <%= form.label :descrição %>
+        <%= form.text_field :description, class: 'text-field' %>
+    </div>
+    <br/>
+    <div class="buttons" >
+        <%= form.submit 'Salvar', class: 'button-list purple' %>
+        <%= link_to "Cancel", lists_path, class: 'button-list gray' %>
+    </div>
+</div>
+<% end %>

@@ -1,18 +1,25 @@
 <header >
-    <h1>minhas listas</h1>
-    <%= link_to "+", new_list_path, class: "button-list" %>
+    <h1>minhas listas </h1>
+    <%= link_to "+", new_list_path, class: "button-list purple" %>
 </header>
 
 <div id="lists">
     <% @lists.each do |list| %>
-        <div class="list">
+        <div>
+            <div class="list">
             <h3><%= list.title %></h3>
-            <%# mostrar os itens de uma lista %>
+            <%= link_to "✎", edit_list_path(list.id), class: "btn btn-edit" %>
+            <%= button_to "🗑", list_path(list.id), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn" %> 
+            </div>
             <div id="items">
                 <% list.items.each do |item| %>
                     <div class="item">
+                        <div>
                         <input type="checkbox" id="item_<%= item.id %>" />
                         <label for="checkbox"><%= item.description %></label>
+                        </div>
+                        <%= link_to "✎", edit_list_item_path(list.id, item.id), class: "btn btn-edit" %>
+                        <%= button_to "🗑", list_item_path(list.id, item.id), method: :delete, data: { turbo_confirm: "Tem certeza que deseja deletar?" }, class: "btn" %> 
                     </div>
                 <% end %>
             </div>
