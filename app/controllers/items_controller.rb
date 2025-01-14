@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
   def create
     @item = @list.items.new(item_params)
     if @item.save
-      redirect_to "#"
+      redirect_to lists_path
     else
       render :new, status: :unprocessable_entity
     end
