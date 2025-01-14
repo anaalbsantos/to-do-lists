@@ -16,6 +16,7 @@ body {
   padding: 20px;
   margin-left: 10%;
   margin-right: 10%;
+  height: 100vh;
 }
 
 header {
@@ -27,6 +28,7 @@ header {
 
 h1 {
   margin: 0;
+  color: rgb(68, 68, 68);
 }
 
 h3 {
@@ -37,40 +39,81 @@ input {
   accent-color: rgb(191, 113, 255);
 }
 
+label {
+  color: rgb(68, 68, 68);
+}
+
 #items {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
+  /* max-width: 200px; */
+  flex-wrap: wrap;
 }
 
 #lists {
   display: flex;
   flex-direction: row;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .item {
   display: flex;
   flex-direction: row;
+  gap: 2px;
 }
 
-/* .list {
-  padding: 5px;
-  border: 1px solid rgb(88, 88, 88);
-  border-radius: 5px;
-} */
+.list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.edit {
+  text-decoration: none;
+  color: white;
+}
+
+.edit:hover {
+  background-color: rgb(191, 113, 255);
+}
+
+.form {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .button-list {
-  background-color: rgb(191, 113, 255);
-  color: white;
+  font-family: "Montserrat", sans-serif;
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 16px;
 }
 
-.button-list:hover {
+.purple {
+  background-color: rgb(191, 113, 255);
+  color: white;
+}
+
+.gray {
+  background-color: rgb(233, 233, 233);
+  color: rgb(88, 88, 88);
+}
+
+.purple:hover {
   background-color: rgb(168, 62, 255);
+}
+
+.gray:hover {
+  background-color: rgb(211, 211, 211);
 }
 
 .button-item {
@@ -84,4 +127,35 @@ input {
 
 .button-item:hover {
   background-color: rgb(233, 233, 233);
+}
+
+.btn {
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  background: transparent;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: rgb(233, 233, 233);
+}
+
+.btn-edit {
+  padding: 0px 4px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.text-field {
+  font-family: "Montserrat", sans-serif;
+  padding: 5px;
+  border: 1px solid rgb(88, 88, 88);
+  border-radius: 5px;
 }
