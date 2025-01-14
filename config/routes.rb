@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   resources :lists do
     resources :items # , only: [:create] # :update, :destroy
   end
-  root "lists#index"
+  # root "lists#index"
 end
